@@ -11,7 +11,9 @@ CREATE TABLE products (
   occasion        TEXT,                    -- casual / office / hangout
   perawatan       TEXT,
   gambar_url      TEXT,
-  sumber          TEXT                     -- publik / sintetis
+  sumber          TEXT,                    -- publik / sintetis
+  sumber_referensi TEXT,
+  sumber_foto      TEXT
 );
 
 -- Tabel FAQ (dipakai chatbot)
