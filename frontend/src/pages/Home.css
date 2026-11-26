@@ -64,3 +64,13 @@
   justify-content: center;
   color: var(--muted);
 }
+
+.featured {
+  max-width: 1000px;
+  margin: 2rem auto 0;
+  text-align: left;
+}
+
+.featured-more {
+  margin-top: 2.5rem;
+}

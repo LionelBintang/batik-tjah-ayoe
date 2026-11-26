@@ -1,6 +1,15 @@
 import { Link } from 'react-router-dom'
 import logo from '../assets/logo.png'
+import products from '../data/products.json'
+import { rupiah } from '../utils/format'
+import './Catalog.css'
 import './Home.css'
+
+// Ganti ID di sini kalau mau produk pilihan yang lain
+const unggulanIds = ['P001', 'P005', 'P006']
+const unggulan = unggulanIds
+  .map((id) => products.find((p) => p.id === id))
+  .filter(Boolean)
 
 function Home() {
   return (
@@ -23,10 +32,24 @@ function Home() {
 
       <section className="section section-card">
         <h2>Koleksi Pilihan</h2>
-        <div className="grid">
-          <div className="card-placeholder">Produk 1</div>
-          <div className="card-placeholder">Produk 2</div>
-          <div className="card-placeholder">Produk 3</div>
+        <div className="product-grid featured">
+          {unggulan.map((p) => (
+            <Link to={`/produk/${p.id}`} key={p.id} className="product-card">
+              <div className="product-img">
+                {p.gambar_url ? (
+                  <img src={p.gambar_url} alt={p.nama_produk} />
+                ) : (
+                  <span>Foto produk</span>
+                )}
+              </div>
+              <h3>{p.nama_produk}</h3>
+              <p className="product-meta">{p.kategori} · {p.warna}</p>
+              <p className="product-price">{rupiah(p.harga)}</p>
+            </Link>
+          ))}
+        </div>
+        <div className="featured-more">
+          <Link to="/katalog" className="btn">Lihat Semua Produk</Link>
         </div>
       </section>
     </>
