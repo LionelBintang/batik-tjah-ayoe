@@ -1,0 +1,19 @@
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 3rem 1.5rem;
+  text-align: center;
+  color: var(--muted);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer .script {
+  font-size: 2rem;
+  color: var(--ink);
+}
+
+.footer-copy {
+  font-size: 0.8rem;
+  margin-top: 1rem;
+}

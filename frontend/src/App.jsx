@@ -1,14 +1,23 @@
-import logo from './assets/logo.png'
-import './App.css'
+import { Routes, Route } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
+import Home from './pages/Home'
+import Catalog from './pages/Catalog'
+import Cart from './pages/Cart'
 
 function App() {
   return (
-    <main className="hero">
-      <img src={logo} alt="Logo Batik Tjah Ayoe" className="hero-logo" />
-      <p className="script">batik untuk gaya sehari-hari</p>
-      <h1>Koleksi Terbaru</h1>
-      <button className="btn">Lihat Koleksi</button>
-    </main>
+    <>
+      <Navbar />
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/katalog" element={<Catalog />} />
+          <Route path="/keranjang" element={<Cart />} />
+        </Routes>
+      </main>
+      <Footer />
+    </>
   )
 }
 
