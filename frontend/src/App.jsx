@@ -7,6 +7,7 @@ import Catalog from './pages/Catalog'
 import ProductDetail from './pages/ProductDetail'
 import Cart from './pages/Cart'
 import Checkout from './pages/Checkout'
+import ChatWidget from './components/ChatWidget'
 
 // Setiap pindah halaman, otomatis scroll ke atas
 function ScrollToTop() {
@@ -32,6 +33,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
+      <ChatWidget />
     </>
   )
 }
